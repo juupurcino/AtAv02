@@ -26,7 +26,7 @@ const axiosPage = () => {
     const [name, setname] = useState<string>("")
 
     useEffect(() => {
-        api.get(`/characters?page=${page}&limit=10&name=${name}`).then((res) => {
+        api.get(`/characters?page=${page}&limit=10`).then((res) => {
             setErro(false);
             setData(res.data.items);
         }).catch((error) =>{
@@ -36,15 +36,17 @@ const axiosPage = () => {
             setErro(true);
         })
 
-    }, [page, name])
+    }, [page])
 
     return(
         <div>
             <h1>Página com useEffect e Axios</h1>
-            <input type="text" value={page} placeholder="Página" onChange={(e) => setpage(e.target.value)} />
-            <input type="text" value={name} placeholder="Página" onChange={(e) => setname(e.target.value)} />
+
+            <input type="text" value={page} placeholder="Digite a página..." onChange={(e) => setpage(e.target.value)} />
+            
             {erro && <h5>{errorMessage}</h5>}
             <div className="flex flex-wrap justify-center items-center">
+            
             <Suspense fallback={<div>Loading...</div>}>
                 {data.map((item, i) => {
                     return(
