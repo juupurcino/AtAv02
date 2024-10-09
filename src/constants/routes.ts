@@ -1,4 +1,5 @@
 export enum ROUTES {
     
-    fetchPage = "/primeira-pagina"
+    fetchPage = "/primeira-pagina",
+    axiosPage = "/segunda-pagina"
 }

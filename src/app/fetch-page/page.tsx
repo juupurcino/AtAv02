@@ -38,7 +38,7 @@ const FetchPage = () => {
             <Suspense fallback={<div>Loading...</div>}>
                 {characters.map((item) => {
                     return (
-                        <div key={item.id} className="w-64 m-8 ">
+                        <div key={item.id} className="w-64 m-8">
                             <Image className="w-48 h-72 object-contain" src={item.image} alt="sla" width={200} height={200}/>
                             <h2>{item.name}</h2>
                             <h2>{item.ki}</h2>

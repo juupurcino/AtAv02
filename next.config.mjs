@@ -7,6 +7,11 @@ const nextConfig = {
                 source: "/primeira-pagina",
                 destination: "/fetch-page",
 
+            },
+            {
+                source: "/segunda-pagina",
+                destination: "/axios-page",
+
             }
         ]
     },
