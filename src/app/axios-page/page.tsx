@@ -44,7 +44,7 @@ const axiosPage = () => {
         <div className="flex flex-wrap justify-center items-center">
             <div className="bg-[url('https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/26079ab060401d8a76039e985d63a3e9.jpg')] w-full h-96 flex justify-center items-center flex-col">
                 <Image className="w-64 h-36 object-contain" src={logo} width={200} height={200} alt="sla"/>
-                <input className="w-80 h-12 p-4 border rounded-3xl outline-none" type="text" value={page} placeholder="Digite a página..." onChange={(e) => setpage(e.target.value)} />
+                <input className="w-80 h-12 p-4 border rounded-3xl outline-yellow-500 " type="text" value={page} placeholder="Digite a página..." onChange={(e) => setpage(e.target.value)} />
 
             </div>
 
@@ -57,17 +57,7 @@ const axiosPage = () => {
                 {data.map((item, i) => {
                     return(
                         <div key={i} className="w-64 m-8 rounded-2xl">
-                            <div className="bg-[url('https://img.freepik.com/vetores-gratis/vetor-de-fundo-de-padrao-geometrico-branco-e-cinza_53876-136510.jpg')] object-contain flex justify-center w-full h-auto rounded-t-2xl">
-                            <Image className="w-48 h-72 object-contain hover:scale-125 transition duration-500 ease-in-out" src={item.image} width={200} height={200} alt="sla"/>
-                            </div>
-                            <div className="bg-gray-800 rounded-b-2xl p-2">
-                                <h2 className="font-bold text-white text-2xl m-1">{item.name}</h2>
-                                <h2 className="font-bold text-yellow-500 m-1">{item.race} | {item.gender}</h2>
-                                <h2 className="font-bold text-white m-1">Base KI:</h2>
-                                <h2 className="font-bold text-yellow-500 m-1">{item.ki}</h2>
-                                <h2 className="font-bold text-white m-1">Affiliation:</h2>
-                                <h2 className="font-bold text-yellow-500 m-1">{item.affiliation}</h2>
-                            </div>
+                            <Card imagem={item.image} nome={item.name} genero={item.gender} raca={item.race} ki={item.ki} afiliacao={item.affiliation}></Card>
                         </div>
                     )
                 })}

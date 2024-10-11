@@ -5,4 +5,6 @@
 :root {
   --branco: #ffffff;
   --preto: #171717;
+  --borda: rgba(182, 8, 8, 0.4) 5px 5px, rgba(184, 9, 9, 0.3) 10px 10px, rgba(163, 10, 10, 0.2) 15px 15px, rgba(163, 10, 10, 0.1) 20px 20px, rgba(255, 0, 0, 0.05)5px 25px;
 }
+

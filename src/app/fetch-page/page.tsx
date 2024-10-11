@@ -3,6 +3,7 @@
 import {useEffect, useState, Suspense } from "react";
 
 import Image from "next/image";
+import { Card } from "@/components/card";
 
 interface IData {
     
@@ -10,7 +11,9 @@ interface IData {
     name: string,
     image: string,
     ki: string,
-    race: string
+    race: string,
+    affiliation: string;
+    gender: string;
 
 }
 
@@ -33,17 +36,12 @@ const FetchPage = () => {
     return(
 
         <>
-            <h1>Characters Disney</h1>
             <div className="flex flex-wrap justify-center items-center">
             <Suspense fallback={<div>Loading...</div>}>
                 {characters.map((item) => {
                     return (
                         <div key={item.id} className="w-64 m-8">
-                            <Image className="w-48 h-72 object-contain" src={item.image} alt="sla" width={200} height={200}/>
-                            <h2>{item.name}</h2>
-                            <h2>{item.ki}</h2>
-                            <h2>{item.race}</h2>
-          
+                            <Card imagem={item.image} nome={item.name} genero={item.gender} raca={item.race} ki={item.ki} afiliacao={item.affiliation}></Card>
                         </div>
                     )
                 })}
